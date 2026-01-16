@@ -1,0 +1,7 @@
+flask
+flask-socketio
+streamlit
+python-socketio
+faiss-cpu
+sentence-transformers
+openai
