@@ -79,6 +79,26 @@ This step processes enterprise data and prepares it for hybrid retrieval.
 - Streaming UX: Answers stream progressively for responsiveness
 - Local-First AI: Supports offline and privacy-sensitive environments
 
+### Architecutre diagram (Mermaid flowchart LR)
+
+    U[User] -->|Query| UI[Streamlit UI]
+
+    UI -->|WebSocket| BE[Flask + Socket.IO Backend]
+
+    BE --> QP[Query Planner Agent]
+
+    QP -->|Strategy Selection| HR[Hybrid Retriever]
+    HR -->|Semantic Search| VS[Vector Store]
+    HR -->|Keyword / Structured| KS[Enterprise Data Sources]
+
+    VS --> HR
+    KS --> HR
+
+    HR --> AS[Answer Synthesizer Agent]
+
+    AS -->|Grounded Answer + Citations| BE
+    BE -->|Token Stream| UI
+    UI -->|Rendered Response| U
 
 
 #### License
