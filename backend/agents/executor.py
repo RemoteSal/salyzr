@@ -8,6 +8,7 @@ class Executor:
     def __init__(self):
         self.memory = ""
 
+    ## for normal llm call without streaming
     def _execute_synthesis(self,query:str,docs:list):
         """Execute method"""
 
@@ -16,7 +17,7 @@ class Executor:
             prompt_builder = PromptFormatter(memory=self.memory)
             messages = prompt_builder.build_messages(query, docs)
 
-            print("\n---debug formatted promptmsg-------", messages)
+            # print("\n---debug formatted promptmsg-------", messages)
             response = call_ollama(messages)
 
             print("\n--debug _execute_synthesis_response------", response)

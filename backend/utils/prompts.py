@@ -3,8 +3,7 @@ from typing import List, Dict
 
 class PromptFormatter:
     """
-    Responsible for formatting enterprise Q&A prompts
-    into LLM-compatible messages.
+    Responsible for formatting enterprise Q&A prompts into LLM-compatible messages.
     """
 
     SYSTEM_PROMPT = (
@@ -25,7 +24,7 @@ class PromptFormatter:
             f"[{i}] {doc['content']}"
             for i, doc in enumerate(docs)
         )
-        print("--debug _format_context res-----", result)
+        # print("--debug _format_context res-----", result)
         return result
 
     def build_messages(self, query: str, docs: List[Dict]) -> List[Dict]:
