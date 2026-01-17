@@ -19,5 +19,18 @@ def add_documents(texts, metadata):
 
 def search(query, k):
     q_emb = embed([query])
+    print("\n\n--debug documents------", documents,"\n\n")
     _, idxs = index.search(np.array(q_emb), k)
     return [documents[i] for i in idxs[0]]
+
+
+def enhanced_search(query, k):
+    if len(documents) == 0:
+        return []
+
+    k = min(k, len(documents))
+    q_emb = embed([query])
+    _, idxs = index.search(np.array(q_emb), k)
+
+    return [documents[i] for i in idxs[0] if i < len(documents)] or ["No documents found"]
+

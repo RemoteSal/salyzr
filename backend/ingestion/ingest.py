@@ -27,4 +27,4 @@ class Ingestor:
 if __name__ == "__main__":
     ingestor = Ingestor(texts=[], meta=[])
     ingestor.ingest_docs()
-    print("\n\nIngestion completed successfully", ingestor.meta)
+    print("\n\nIngestion completed successfully", ingestor.meta, ingestor.texts)

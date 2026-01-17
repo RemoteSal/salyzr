@@ -1,34 +1,50 @@
 import time
 import traceback
-from backend.utils.llm import call_ollama
+from backend.utils.llm import call_ollama, stream_ollama
+from backend.utils.prompts import PromptFormatter
 
 class Executor:
 
     def __init__(self):
-        pass
+        self.memory = ""
 
     def _execute_synthesis(self,query:str,docs:list):
         """Execute method"""
 
         try:
      
-            context = "\n".join(
-                [f"[{i}] {d['content']}" for i, d in enumerate(docs)]
-            )
+            prompt_builder = PromptFormatter(memory=self.memory)
+            messages = prompt_builder.build_messages(query, docs)
 
-            prompt = f"""
-                You are an enterprise assistant.
-                Answer ONLY using the sources below.
-                Cite using [index]. If insufficient info, say so.
+            print("\n---debug formatted promptmsg-------", messages)
+            response = call_ollama(messages)
 
-                Question: {query}
-
-                Sources:
-                {context}
-                """
-
-            response = call_ollama(prompt)
-            print("--debug response------", response)
+            print("\n--debug _execute_synthesis_response------", response)
+            return response
 
         except Exception as e:
             print("--debug _execute_synthesis error :", str(e), traceback.format_exc())
+
+
+    def _stream_synthesis(self, query, docs, socketio):
+        prompt = PromptFormatter()
+        messages = prompt.build_messages(query, docs)
+
+        socketio.emit("agent_event", {"stage": "Synthesizing grounded answer"})
+
+        final_answer = ""
+        try:
+            for token in stream_ollama(messages):
+                final_answer += token
+                socketio.emit("answer_chunk", {
+                    "token": token
+                })
+
+            socketio.emit("agent_event", {"stage": "Finalizing response"})
+            print("--debug _stream_synthesis ans: ", final_answer)
+
+            return final_answer
+        except Exception as e:
+            print("--debug _stream_synthesis error :", str(e), traceback.format_exc())
+
+
