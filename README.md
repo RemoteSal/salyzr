@@ -1,34 +1,91 @@
 # Enterprise Intelligence Search (Agentic RAG)
-Overview
 
-This project implements an intelligent enterprise search system that goes beyond semantic matching by using agent-orchestrated retrieval, grounded answer synthesis, and real-time streaming responses.
+## Overview
+Enterprise Intelligence Search is an agent-orchestrated Retrieval-Augmented Generation (RAG) system designed for high-fidelity enterprise knowledge discovery.  
+It moves beyond basic semantic search by combining query planning, hybrid retrieval, grounded answer synthesis, and real-time streaming delivery.
 
-## Key Capabilities
-
-- Context-aware query planning
-- Hybrid semantic retrieval
-- Citation-backed answers
-- Real-time streaming via WebSockets
-- Modular agent architecture
+The system is optimized for accuracy, explainability, and extensibility in enterprise environments.
 
 
-###### An agent-orchestrated enterprise intelligence layer that performs context-aware retrieval, enforces grounding via citations, and streams answers in real time.
+## Core Capabilities
+- Context-aware query planning via agents
+- Hybrid retrieval (semantic + keyword / structured)
+- Grounded answer synthesis with citation enforcement
+- Real-time token streaming using WebSockets
+- Modular, extensible agent architecture
+- Enterprise-ready separation of ingestion, retrieval, and generation
 
-### Steps to run 
-- Create & activate a virtual environment
-``` python -m venv venv
-    venv\Scripts\Activate.ps1
+---
+
+## High-Level Architecture
+
+**User Query**  
+→ Streamlit UI  
+→ Flask + Socket.IO Backend  
+→ Query Planner Agent  
+→ Hybrid Retriever  
+→ Answer Synthesizer  
+→ Grounded Answer + Citations  
+→ Streamed back to UI in real time
+
+---
+
+## Tech Stack
+- **Backend:** Python, Flask, Socket.IO
+- **Frontend:** Streamlit
+- **LLM Runtime:** Ollama (local inference)
+- **Retrieval:** Vector + traditional retrieval (hybrid)
+- **Architecture Pattern:** Agent-orchestrated RAG
+
+---
+
+## Setup Instructions
+
+### 1. Create and Activate Virtual Environment
+```bash
+python -m venv venv
 ```
 
-### Run ingestion
+Windows
+```
+venv\Scripts\Activate.ps1
+```
+
+macOS / Linux
+```
+source venv/bin/activate
+```
+
+### 2.Install Dependencies
+pip install -r requirements.txt
+
+### 3. Run Ingestion Pipeline
+```
 python -m backend.ingestion.ingest
+```
+
+This step processes enterprise data and prepares it for hybrid retrieval.
+
+### 4. Start the Application
+
+- Start backend (Flask + Socket.IO)
+- Launch Streamlit UI
+- Submit queries and receive grounded, streamed responses
+
+### Design Principles
+
+- Grounded Answers First: Every response is citation-backed
+- Agentic Control: Retrieval strategies are dynamically selected
+- Streaming UX: Answers stream progressively for responsiveness
+- Local-First AI: Supports offline and privacy-sensitive environments
 
 
-- System Flow
 
-User query → Streamlit UI
-Flask SocketIO backend receives query
-Query Planner Agent selects retrieval strategy
-Hybrid Retriever fetches enterprise knowledge
-Answer Synthesizer generates grounded response
-Citations + answer streamed back to UI
+#### License
+
+This project is released under the MIT License unless stated otherwise.
+Third-Party Acknowledgements
+
+This project uses Ollama for local LLM inference.
+Ollama is distributed under its own license terms.
+See: https://github.com/ollama/ollama
