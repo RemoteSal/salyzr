@@ -1,12 +1,26 @@
-from openai import OpenAI
 import os
+from ollama import chat
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# from openai import OpenAI
+# from dotenv import load_dotenv
+# load_dotenv()
+# client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-def call_llm(prompt: str) -> str:
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0
+
+def call_ollama(messages, model="gemma3:1b"):
+    response = chat(
+        model=model,
+        messages=messages
     )
-    return response.choices[0].message.content
+    return response.message.content
+
+
+
+
+# def call_llm(prompt: str) -> str:
+#     response = client.chat.completions.create(
+#         model="gpt-4o-mini",
+#         messages=[{"role": "user", "content": prompt}],
+#         temperature=0
+#     )
+#     return response.choices[0].message.content

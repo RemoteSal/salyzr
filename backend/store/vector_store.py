@@ -15,6 +15,8 @@ def add_documents(texts, metadata):
     for t, m in zip(texts, metadata):
         documents.append({"content": t, **m})
 
+    print("--debug documents------", len(documents))
+
 def search(query, k):
     q_emb = embed([query])
     _, idxs = index.search(np.array(q_emb), k)

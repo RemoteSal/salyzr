@@ -5,3 +5,7 @@ python-socketio
 faiss-cpu
 sentence-transformers
 openai
+python-dotenv
+ollama==0.6.0
+pydantic==2.12.3
+pydantic_core==2.41.4

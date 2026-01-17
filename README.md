@@ -20,6 +20,10 @@ This project implements an intelligent enterprise search system that goes beyond
     venv\Scripts\Activate.ps1
 ```
 
+### Run ingestion
+python -m backend.ingestion.ingest
+
+
 - System Flow
 
 User query → Streamlit UI

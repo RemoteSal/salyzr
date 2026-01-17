@@ -1,6 +1,6 @@
 import time
 import re
-from store.vector_store import search
+from backend.store.vector_store import search
 
 
 class Retreiver:

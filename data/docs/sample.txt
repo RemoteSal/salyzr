@@ -1,1 +1,281 @@
-This is a sample text!
+This is a sample enterprise document.
+
+
+Dragon1 Open EA Method Example. www.dragon1.com/resources 
+ENTERPRISE ARCHITECTURE 
+DOCUMENT 
+Dragon1 Template 
+Version 0.1 ● DECEMBER 23, 2018  
+Dragon1   
+ENTERPRISE ARCHITECTURE DOCUMENT ------------------------------------------------------------------------------------------------------------------------------------------ 
+Using This Template 
+All chapters of this template should be addressed, however if a chapter or paragraph is not 
+needed, that section/subsection of the document can be marked as Not Applicable but an 
+explanation must be provided as to why it does not apply.  Please also reference the Lessons 
+Learned section in the Appendix for additional information that may assist. 
+Dragon1 open EA Method 
+ENTERPRISE ARCHITECTURE DOCUMENT 
+[Organization Name] 
+[PROJECT NAME] 
+VERSION: [Version Number] 
+REVISION DATE: [Date] 
+Approval of the Enterprise Architecture indicates an understanding of the purpose and content described 
+in this deliverable. By signing this deliverable, each individual agrees with the content contained in this 
+deliverable. 
+Approver Name 
+Title 
+Signature 
+Date 
+[Organization Name]  ENTERPRISE ARCHITECTURE DOCUMENT  
+[Project Name]  [Version Number] | [Revision Date] ------------------------------------------------------------------------------------------------------------------------------------------ 
+Dragon1 Open Enterprise Architecture Method Page 2 of 13 www.dragon1.com 
+ 
+Contents 
+CHAPTER 1 MANAGEMENT SUMMARY .......................................................... 3 
+CHAPTER 2 INTRODUCTION ............................................................................ 5 
+1.1 Document Scope .................................................................................................................................... 5 
+CHAPTER 3 STRATEGY AND BUSINESS MODEL .......................................... 6 
+3.1 Strategy ................................................................................................................................................... 6 
+3.2 Business Model ....................................................................................................................................... 6 
+CHAPTER 4 OVERALL ENTERPRISE ARCHITECTURE .................................. 7 
+4.1 Enterprise Architecture Context Diagram ............................................................................................... 7 
+4.2 Enterprise Architecture Model................................................................................................................. 7 
+4.2.1 Overall Architectural Considerations ................................................................................................ 7 
+4.3 Enterprise Architecture Concepts Overview and Definitions ............................................................ 7 
+4.4 Enterprise Architecture Principles Overview and Definitions .................................................................. 8 
+4.5 Enterprise Architecture Building Blocks Overview and Definitions ......................................................... 8 
+4.6 Enterprise Architecture Element Definitions ........................................................................................... 8 
+4.7 Enterprise Architecture Component Definitions ...................................................................................... 8 
+4.7.1 Enterprise Architecture Component A .............................................................................................. 8 
+4.7.2 Enterprise Architecture Component B .......................................................................................... 9 
+CHAPTER 5 ARCHITECTURES ........................................................................10 
+5.1 Business Architecture ........................................................................................................................... 10 
+5.2 Information Architecture ........................................................................................................................ 10 
+5.3 Application Architecture ........................................................................................................................ 10 
+5.4 Technical Architecture .......................................................................................................................... 10 
+CHAPTER 6 ENTERPRISE ARCHITECTURE DESIGN ....................................11 
+6.1 Enterprise Architecture Component A .................................................................................................. 11 
+6.1.1 Component Functions .................................................................................................................... 11 
+6.1.2 Technical Considerations ............................................................................................................... 11 
+6.1.3 Selected Product(s) ........................................................................................................................ 11 
+6.1.4 Selection Rationale ........................................................................................................................ 11 
+6.1.5 Architecture Risks .......................................................................................................................... 11 
+ 
+ 
+[Office Name]  
+[Project Name]  
+ENTERPRISE ARCHITECTURE DOCUMENT  
+[Version Number] | [Revision Date] ------------------------------------------------------------------------------------------------------------------------------------------ 
+Chapter 1 MANAGEMENT SUMMARY  
+This chapter introduces the Enterprise Architecture itself, by means of listing the top 10 Architecture 
+Principles and the impact they have on the products, processes and projects of the company. 
+Hello dear reader, 
+Before you lies the Enterprise Architecture of SARAH (a demo company). An enterprise architecture is a 
+conceptual blueprint of the organization. Meaning it is a set of views and visualizations of the current state 
+and future state of the organization and the roadmap to get there.  
+This document is aimed at all managers, projects and project workers in the company. In fact this 
+document is aimed at everyone that is helping with the change and transformation in the organization. 
+There are five benefits this Enterprise Architecture will realize year by year: 
+1. IT Cost Reduction and Rationalization 
+2. Business Process Improvement 
+3. Standardization 
+4. Strategy Realization 
+5. Innovation Enablement 
+Based on the strategy and the business model of SARAH the Enterprise Architecture can be summarized 
+in 10 Architecture Concepts and Architecture Principles. By helping to implement these concepts and their 
+principles, you will help to realize the 5 benefits of EA. And the better these concepts and principles are 
+implemented, the sooner the organization will reach its future state and be more competitive (stronger), 
+efficient (functional) and innovative (beautiful). 
+Architecture Concept 1: 
+Architecture Principle 1: 
+Architecture Concept 2: 
+Architecture Principle 2: 
+Architecture Concept 3: 
+Architecture Principle 3: 
+Architecture Concept 4: 
+Architecture Principle 4: 
+Architecture Concept 5: 
+Architecture Principle 5: 
+Architecture Concept 6: 
+Dragon1 Open Enterprise Architecture Method 
+Page 3 of 13 
+www.dragon1.com 
+[Office Name]  
+[Project Name]  
+ENTERPRISE ARCHITECTURE DOCUMENT  
+[Version Number] | [Revision Date] ------------------------------------------------------------------------------------------------------------------------------------------ 
+Architecture Principle 6: 
+Architecture Concept 7: 
+Architecture Principle 7: 
+Architecture Concept 8: 
+Architecture Principle 8: 
+Architecture Concept 9: 
+Architecture Principle 9: 
+Architecture Concept 10: 
+Architecture Principle 10: 
+Dragon1 Open Enterprise Architecture Method 
+Page 4 of 13 
+www.dragon1.com 
+[Office Name]  
+[Project Name]  
+ENTERPRISE ARCHITECTURE DOCUMENT  
+[Version Number] | [Revision Date] ------------------------------------------------------------------------------------------------------------------------------------------ 
+Chapter 2 Introduction 
+This chapter introduces the Enterprise Architecture Document. It says why this document was 
+1.1 Document Scope 
+Document Scope describes the context and the goals of this document in a narrative. 
+Example:   
+Enterprise Architecture and Business Requirements  
+This document describes the Enterprise Architecture of the demo company SARAH. This Enterprise 
+Architecture (EA) satisfies the business requirements from the stakeholders as documented in the 
+Business Requirements Document, <Date>, and summarized in chapter <Number> and implements the 
+functionality and satisfies technical, operational and transitional requirements described in the Functional 
+Specification, <Date>. Also summarized in Chapter <number> 
+The goal of this Enterprise Architecture document is to define the products, processes, information flows, 
+applications, data, technologies, technical products, and techniques necessary to develop and support the 
+future state organization/company, and to ensure that the organization elements/components are 
+compatible and comply with the enterprise-wide standards and direction defined by the Owner/Client and 
+Architecture Board. 
+This document will also: 
+Identify and explain the risks inherent in this Enterprise Architecture; 
+Define baseline sizing, archiving and performance requirements; 
+Identify the hardware and software specifications for the Development, Testing, QA and Production 
+environments; 
+Define procedures for both data and code migration among the environments. 
+The Document Scope narrative also provides an overview of the efforts conducted to understand the 
+existing technical environment and IT strategic direction and to determine how the system’s proposed 
+technical architecture fits into them. 
+Where does all the data comes from and how is it managed and provided? 
+Architecture Repository 
+All the data, models, views and visualizations used in this document are stored in the companies 
+Architecture Repository. This Architecture repository can be found on location:… 
+Architecture Dossier  
+In this document you see fragments of and references to other architecture documents. These documents 
+are all part of the architecture dossier of the company. The documents are created with the data, models, 
+views and visualizations from the Architecture Repository. This Architecture Dossier can be found on 
+location:… 
+Architecture Center 
+For all stakeholders and projects in the company there is an Architecture Center on the companies 
+intranet. It is a set of webpages that publish and provide the architecture visualizations and architecture 
+documents that everyone should have access to. It is these documents that support decision making of 
+stakeholders and guide the work done in the innovation projects. 
+This document will be managed and updated every years. On the Architecture Center you can find the 
+current and previous versions of this document. NOTE: this document can classified, so it is not permitted 
+to make (parts of) the contents publicly available or share it with people outside of the company. 
+Dragon1 Open Enterprise Architecture Method 
+Page 5 of 13 
+www.dragon1.com 
+[Office Name]  
+[Project Name]  
+ENTERPRISE ARCHITECTURE DOCUMENT  
+[Version Number] | [Revision Date] ------------------------------------------------------------------------------------------------------------------------------------------ 
+Chapter 3 Strategy and Business Model 
+This chapter describes and visualizes the current and future strategy and business model of the 
+organization. 
+3.1 Strategy 
+The organization has a current state and future state strategy. The strategy of the organization is set yearly 
+by the board of directors. New technologies, trends, shifts in interest of market and client, demographics 
+and sociologic changes all have impact on and influence the new strategy. 
+For the coming 3 three years the organization has the following strategy: 
+<strategy map> 
+For the past three year, the organization has the following strategy: 
+<strategy map> 
+The following parts of the strategy were not realized: 
+<list issues> 
+3.2 Business Model 
+The organization has a current state and future state business model. The business model is set yearly by 
+the board of directors together with the management team. 
+For the coming three years the organization has actually two business model for two different market. 
+In this document we will only show one of these business models: 
+<business model canvas> 
+Below you can see the current state business model: 
+<business model canvas> 
+Dragon1 Open Enterprise Architecture Method 
+Page 6 of 13 
+www.dragon1.com 
+[Office Name]  
+[Project Name]  
+ENTERPRISE ARCHITECTURE DOCUMENT  
+[Version Number] | [Revision Date] ------------------------------------------------------------------------------------------------------------------------------------------ 
+Chapter 4 OVERALL ENTERPRISE ARCHITECTURE 
+EA One pager and Big Five (Infographics) 
+4.1 Enterprise Architecture Context Diagram 
+The Enterprise Architecture Context Diagram provides the “big picture” view of the enterprise’s 
+architecture, and puts it in context with the rest collaborating organizations, illustrating how the 
+organizations elements & components fit into the existing environment. 
+4.2 Enterprise Architecture Model 
+The Enterprise Architecture Model represents the various architecture concepts, principles, building 
+blocks, patterns, elements, components, rules and standards that comprise the organization, and shows 
+their interrelationships. 
+4.2.1 Overall Architectural Considerations 
+The Overall Architectural Considerations section defines how additional technical requirements have 
+been addressed by the architecture.  Representative items in this section may include: 
+4.3 Enterprise Architecture Concepts Overview and Definitions 
+Dragon1 Open Enterprise Architecture Method 
+Page 7 of 13 
+www.dragon1.com 
+[Office Name]  
+[Project Name]  
+ENTERPRISE ARCHITECTURE DOCUMENT  
+[Version Number] | [Revision Date] ------------------------------------------------------------------------------------------------------------------------------------------ 
+4.4 Enterprise Architecture Principles Overview and Definitions 
+4.5 Enterprise Architecture Building Blocks Overview and Definitions 
+4.6 Enterprise Architecture Element Definitions 
+4.7 Enterprise Architecture Component Definitions 
+4.7.1 Enterprise Architecture Component A 
+The Architecture Component Definitions section provides narrative describing and explaining each 
+architecture component in the Enterprise Architecture Model, and identifies specific elements that 
+comprise that component in this system.  The following are examples of architecture components and 
+elements: 
+Enterprise Architecture 
+Component 
+Component Parts 
+Process 
+Task 
+Page 8 of 13 
+Dragon1 Open Enterprise Architecture Method 
+www.dragon1.com 
+[Office Name]  
+[Project Name]  
+ENTERPRISE ARCHITECTURE DOCUMENT  
+[Version Number] | [Revision Date] ------------------------------------------------------------------------------------------------------------------------------------------ 
+Input 
+Output 
+Indicator 
+Application 
+Interface 
+Module 
+Activity 
+4.7.2 Enterprise Architecture Component B 
+Dragon1 Open Enterprise Architecture Method 
+Page 9 of 13 
+www.dragon1.com 
+[Office Name]  
+[Project Name]  
+ENTERPRISE ARCHITECTURE DOCUMENT  
+[Version Number] | [Revision Date] ------------------------------------------------------------------------------------------------------------------------------------------ 
+Chapter 5 ARCHITECTURES 
+Here follows a description and visualization of the architectures that are part of the architecture framework 
+5.1 Business Architecture 
+5.2 Information Architecture 
+5.3 Application Architecture 
+5.4 Technical Architecture 
+Dragon1 Open Enterprise Architecture Method 
+Page 10 of 13 
+www.dragon1.com 
+[Office Name]  
+[Project Name]  
+ENTERPRISE ARCHITECTURE DOCUMENT  
+[Version Number] | [Revision Date] ------------------------------------------------------------------------------------------------------------------------------------------ 
+Chapter 6 ENTERPRISE ARCHITECTURE DESIGN 
+The Enterprise Architecture Design section provides detailed descriptions of each product implementing 
+architecture components, and explains the rationale for product selection. 
+6.1 Enterprise Architecture Component A 
+6.1.1 Component Functions 
+6.1.2 Technical Considerations 
+6.1.3 Selected Product(s) 
+6.1.4 Selection Rationale 
+6.1.5 Architecture Risks 
+Dragon1 Open Enterprise Architecture Method 
+Page 11 of 13 
+www.dragon1.com 
